@@ -1,9 +1,6 @@
 export default async function (eleventyConfig) {
   eleventyConfig
-    .addPassthroughCopy({
-      "./public/": "/",
-    })
-    .addPassthroughCopy("**/*.png");
+    .addPassthroughCopy("./css/")
 
   // enable smart quotes
   eleventyConfig.amendLibrary("md", function (md) {
@@ -11,6 +8,7 @@ export default async function (eleventyConfig) {
       typographer: true,
     });
   });
+
 
   eleventyConfig.addCollection("writings", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/writings/**/*.md");
