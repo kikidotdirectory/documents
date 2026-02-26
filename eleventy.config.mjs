@@ -11,6 +11,9 @@ export default async function (eleventyConfig) {
       typographer: true,
     });
   });
+
+  eleventyConfig.addCollection("writings", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/writings/**/*.md");
   });
 }
 
