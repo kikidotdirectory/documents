@@ -1,91 +1,143 @@
-/* Modern reset: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Vale's CSS Reset https://vale.rocks/posts/css-reset */
+@layer {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+	}
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+	* {
+		padding: 0;
+		margin: 0;
+	}
 
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
+	html {
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+        block-size: 100%;
+	}
 
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin-block-end: 0;
-}
+	body {
+		min-block-size: 100%;
+	}
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
+	img,
+	iframe,
+	audio,
+	video,
+	canvas {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
+	svg {
+		max-inline-size: 100%;
+	}
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: 1.1;
-}
+	svg:not([fill]) {
+		fill: currentColor;
+	}
 
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-}
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-}
+	textarea {
+		resize: vertical;
+	}
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
+	fieldset,
+	iframe {
+		border: none;
+	}
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
+	p {
+		text-wrap: pretty;
+		font-variant-numeric: proportional-nums;
+	}
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-variant-numeric: lining-nums;
+	}
+
+	p,
+    blockquote,
+    q,
+    figcaption,
+    li {
+        hanging-punctuation: first allow-end last;
+    }
+
+	input,
+	label,
+	button,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+        line-height: 1.1;
+    }
+
+	math,
+	time,
+	table {
+		font-variant-numeric: tabular-nums lining-nums slashed-zero;
+	}
+
+	code {
+		font-variant-numeric: slashed-zero;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	abbr {
+		font-variant-caps: all-small-caps;
+		text-decoration: none;
+
+		&[title] {
+			cursor: help;
+			text-decoration: underline dotted;
+		}
+	}
+
+	sup,
+	sub {
+		line-height: 0;
+	}
+
+	:disabled {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+
+	:focus-visible {
+		outline-offset: 0.2rem;
+	}
 }
+/* end reset */
