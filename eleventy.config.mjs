@@ -1,9 +1,9 @@
 export default async function (eleventyConfig) {
   eleventyConfig
     .addPassthroughCopy({
-      "./public/": "/"
+      "./public/": "/",
     })
-    .addPassthroughCopy("**/*.png")
+    .addPassthroughCopy("**/*.png");
 
   // enable smart quotes
   eleventyConfig.amendLibrary("md", function (md) {
@@ -11,16 +11,17 @@ export default async function (eleventyConfig) {
       typographer: true,
     });
   });
+  });
 }
 
 export const config = {
   markdownTemplateEngine: "njk",
   htmlTemplateEngine: "njk",
   dir: {
-    input: "content",
+    input: "src",
     includes: "../_includes",
     layouts: "../_includes/layouts",
     data: "../_data",
-    output: "_site"
-  }
-}
+    output: "_site",
+  },
+};
