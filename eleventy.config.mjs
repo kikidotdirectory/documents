@@ -1,3 +1,5 @@
+import { RenderPlugin } from "@11ty/eleventy";
+
 import path from "node:path";
 import * as sass from "sass";
 
@@ -8,6 +10,9 @@ export default async function (eleventyConfig) {
 			typographer: true,
 		});
 	});
+
+	// Enable plugins
+	eleventyConfig.addPlugin(RenderPlugin);
 
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
