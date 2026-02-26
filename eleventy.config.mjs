@@ -14,31 +14,6 @@ export default async function (eleventyConfig) {
 	// Enable plugins
 	eleventyConfig.addPlugin(RenderPlugin);
 
-	// add .scss as a template extension
-	eleventyConfig.addExtension("scss", {
-		outputFileExtension: "css",
-		useLayouts: false,
-		compile: async function (inputContent, inputPath) {
-			let parsed = path.parse(inputPath);
-			// Don’t compile file names that start with an underscore
-			if (parsed.name.startsWith("_")) {
-				return;
-			}
-
-			const compiled = sass.compileString(inputContent, {
-				loadPaths: [parsed.dir || ".", this.config.dir.includes],
-			});
-
-			// Map dependencies for incremental builds
-			this.addDependencies(inputPath, compiled.loadedUrls);
-
-			return async (data) => {
-				return compiled.css;
-			};
-		},
-	});
-	eleventyConfig.addTemplateFormats("scss");
-
 	eleventyConfig.addCollection("writings", function (collectionApi) {
 		return collectionApi.getFilteredByGlob("src/writings/**/*.md");
 	});
