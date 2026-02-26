@@ -14,6 +14,7 @@ export default async function (eleventyConfig) {
 	// Enable plugins
 	eleventyConfig.addPlugin(RenderPlugin);
 
+	// add .scss as a template extension
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
 		useLayouts: false,
