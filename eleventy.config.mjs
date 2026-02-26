@@ -11,6 +11,9 @@ export default async function (eleventyConfig) {
 	// Enable plugins
 	eleventyConfig.addPlugin(RenderPlugin);
 
+	// Enable CSS bundling
+	eleventyConfig.addBundle("css");
+
 	eleventyConfig.addCollection("writings", function (collectionApi) {
 		return collectionApi.getFilteredByGlob("src/writings/**/*.md");
 	});
