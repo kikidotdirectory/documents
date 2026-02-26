@@ -27,6 +27,6 @@ export const config = {
 		includes: "_includes",
 		layouts: "_includes/layouts",
 		data: "_data",
-		output: "_site",
+		output: "dist",
 	},
 };
