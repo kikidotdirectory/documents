@@ -9,6 +9,9 @@ import postcssImport from "postcss-import";
 import tailwindcss from "tailwindcss";
 
 export default async function (eleventyConfig) {
+	// custom watch targets
+	eleventyConfig.addWatchTarget('./src/css/**/*.css');
+
 	eleventyConfig.on("eleventy.before", async () => {
 		const inputPath = "src/css/global.css";
 		const outputPath = "dist/css/global.css";
