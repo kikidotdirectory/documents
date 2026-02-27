@@ -10,7 +10,7 @@ import tailwindcss from "tailwindcss";
 
 export default async function (eleventyConfig) {
 	// custom watch targets
-	eleventyConfig.addWatchTarget('./src/css/**/*.css');
+	eleventyConfig.addWatchTarget('./src/css/**/*.{css, json}');
 
 	eleventyConfig.on("eleventy.before", async () => {
 		const inputPath = "src/css/global.css";
