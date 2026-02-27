@@ -36,6 +36,16 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("writings", function (collectionApi) {
 		return collectionApi.getFilteredByGlob("src/writings/**/*.md");
 	});
+
+	// custom filters
+	eleventyConfig.addFilter("shortDate", (str) => {
+		const date = new Date(str);
+
+		return date.toLocaleDateString("en-US", {
+			month: "2-digit",
+			year: "numeric",
+		});
+	});
 }
 
 export const config = {
