@@ -15,9 +15,8 @@
 	html {
 		-webkit-text-size-adjust: none;
 		text-size-adjust: none;
-		line-height: 1.5;
 		-webkit-font-smoothing: antialiased;
-        block-size: 100%;
+		block-size: 100%;
 	}
 
 	body {
@@ -83,12 +82,12 @@
 	}
 
 	p,
-    blockquote,
-    q,
-    figcaption,
-    li {
-        hanging-punctuation: first allow-end last;
-    }
+	blockquote,
+	q,
+	figcaption,
+	li {
+		hanging-punctuation: first allow-end last;
+	}
 
 	input,
 	label,
@@ -99,8 +98,8 @@
 	h4,
 	h5,
 	h6 {
-        line-height: 1.1;
-    }
+		line-height: 1.1;
+	}
 
 	math,
 	time,
