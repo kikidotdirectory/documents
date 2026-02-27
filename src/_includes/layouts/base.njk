@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="/css/global.css">
 	</head>
 	<body>
-		<h1 class="wrapper flow"></h1>
-		{{ content | safe}}
+		{% block content %}{% endblock %}
 	</body>
 </html>
