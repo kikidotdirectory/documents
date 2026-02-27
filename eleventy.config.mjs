@@ -43,9 +43,6 @@ export const config = {
 	htmlTemplateEngine: "njk",
 	dir: {
 		input: "src",
-		includes: "_includes",
-		layouts: "_includes/layouts",
-		data: "_data",
 		output: "dist",
 	},
 };
