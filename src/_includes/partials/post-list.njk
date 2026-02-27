@@ -1,0 +1,7 @@
+<ul class="post-list">
+	{%- for post in collections.post | reverse -%}
+	{% if not post.data.draft %}
+	<li><time>{{ post.data.date | shortDate }}</time><a href="/writings/{{post.data.title | slugify}}">{{ post.data.title }}</a></li>
+	{% endif %}
+	{%- endfor -%}
+</ul>

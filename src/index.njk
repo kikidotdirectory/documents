@@ -1,3 +1,7 @@
 ---
-layout: "base.njk"
+layout: "layouts/page.njk"
+eleventyImport:
+- collections: ["post"]
 ---
+
+{% include "partials/post-list.njk" %}
