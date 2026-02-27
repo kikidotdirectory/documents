@@ -1,6 +1,6 @@
 ---
 title: thoughts on the stranger
-date: 2025-02-25
+date: 2026-02-25
 ---
 
 *to sappy*
