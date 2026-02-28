@@ -5,7 +5,7 @@
 	margin-bottom: var(--space-xs-s);
 }
 .home-header h1 {
-	margin-bottom: 0.25rlh;
+	margin-bottom: var(--space-3xs);
 }
 .home-header .desc {
 	color: var(--color-text-subtle);
