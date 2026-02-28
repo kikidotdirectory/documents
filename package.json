@@ -1,11 +1,9 @@
 {
-  "name": "eleventy-starter-project",
+  "name": "documents.kiki.directory",
   "version": "1.0.0",
   "description": "a barebones starter repository for eleventy projects",
   "scripts": {
-    "css": "npx postcss src/css/*.css --dir dist/css",
-    "start": "npx @11ty/eleventy --serve",
-    "production": "NODE_ENV=production eleventy && NODE_ENV=production npm run css"
+    "start": "npx @11ty/eleventy --serve"
   },
   "author": "kiki chang",
   "license": "ISC",
