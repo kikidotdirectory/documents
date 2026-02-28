@@ -1,7 +1,11 @@
 :root {
-  --gutter: var(--space-s);
-  --transition-base: 250ms ease;
-  --transition-movement: 200ms linear;
-  --transition-fade: 300ms ease;
-  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+	color-scheme: light dark;
+	--color-bg: light-dark(var(--color-paper), var(--color-base-900));
+	--color-text: light-dark(var(--color-ink), var(--color-base-050));
+	--color-text-subtle: light-dark(var(--color-base-600), var(--color-base-300));
+	--gutter: var(--space-s);
+	--transition-base: 250ms ease;
+	--transition-movement: 200ms linear;
+	--transition-fade: 300ms ease;
+	--transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
 }
