@@ -25,12 +25,13 @@ export default async function (eleventyConfig) {
 	});
 
 	// custom filters
-	eleventyConfig.addFilter("shortDate", (str) => {
+	eleventyConfig.addFilter("postDate", (str) => {
 		const date = new Date(str);
 		return date.toLocaleDateString("en-US", {
-			month: "2-digit",
+			month: "short",
+			day: "numeric",
 			year: "numeric",
-		});
+		}).toLowerCase();
 	});
 }
 

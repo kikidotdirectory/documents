@@ -31,3 +31,8 @@ a {
 ::selection {
 	background: #4990e825;
 }
+
+time {
+	color: var(--color-text-subtle);
+	font-style: italic;
+}
