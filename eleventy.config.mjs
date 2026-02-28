@@ -1,30 +1,12 @@
 import { RenderPlugin } from "@11ty/eleventy";
 
-import fs from "node:fs/promises";
-import path from "node:path";
-
-import postcss from "postcss";
-import postcssImportExtGlob from "postcss-import-ext-glob";
-import postcssImport from "postcss-import";
-import tailwindcss from "tailwindcss";
-
+import { buildAllCss } from "./src/_config/build-css.js";
 export default async function (eleventyConfig) {
-	// custom watch targets
-	eleventyConfig.addWatchTarget('./src/css/**/*.{css, json}');
-
 	eleventyConfig.on("eleventy.before", async () => {
-		const inputPath = "src/css/global.css";
-		const outputPath = "dist/css/global.css";
-		const inputContent = await fs.readFile(inputPath, "utf-8");
-		const result = await postcss([
-			postcssImportExtGlob,
-			postcssImport,
-			tailwindcss,
-		]).process(inputContent, { from: inputPath });
-
-		await fs.mkdir(path.dirname(outputPath), { recursive: true });
-		await fs.writeFile(outputPath, result.css);
+		await buildAllCss();
 	});
+	// custom watch targets
+	eleventyConfig.addWatchTarget("./src/css/**/*.css");
 
 	// enable smart quotes
 	eleventyConfig.amendLibrary("md", function (md) {
@@ -36,6 +18,8 @@ export default async function (eleventyConfig) {
 	// Enable plugins
 	eleventyConfig.addPlugin(RenderPlugin);
 
+	eleventyConfig.addBundle("css", { hoist: true });
+
 	eleventyConfig.addCollection("writings", function (collectionApi) {
 		return collectionApi.getFilteredByGlob("src/writings/**/*.md");
 	});
@@ -43,7 +27,6 @@ export default async function (eleventyConfig) {
 	// custom filters
 	eleventyConfig.addFilter("shortDate", (str) => {
 		const date = new Date(str);
-
 		return date.toLocaleDateString("en-US", {
 			month: "2-digit",
 			year: "numeric",
@@ -57,5 +40,6 @@ export const config = {
 	dir: {
 		input: "src",
 		output: "dist",
+		includes: "_includes",
 	},
 };
