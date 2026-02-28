@@ -1,0 +1,6 @@
+.post-list {
+	list-style: none;
+}
+.post-list li {
+	margin-bottom: var(--space-xs);
+}

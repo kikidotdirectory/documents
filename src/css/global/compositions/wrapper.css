@@ -3,7 +3,7 @@ WRAPPER COMPOSITION
 A common wrapper/container
 */
 .wrapper {
-	max-width: 54ch;
-	margin: var(--space-s-l) var(--gutter);
+	max-width: 50ch;
+	padding: var(--space-s-l) var(--gutter);
 	position: relative;
 }

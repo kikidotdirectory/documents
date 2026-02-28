@@ -28,7 +28,7 @@ const buildCss = async (inputPath, outputPaths) => {
 export const buildAllCss = async () => {
   const tasks = [];
 
-  tasks.push(buildCss('src/css/global.css', ['src/_includes/css/global.css']));
+  tasks.push(buildCss('src/css/global/global.css', ['src/_includes/css/global.css']));
 
   const localCssFiles = await fg(['src/css/local/**/*.css']);
   for (const inputPath of localCssFiles) {

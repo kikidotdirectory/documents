@@ -1,0 +1,9 @@
+.home-header {
+	margin-bottom: var(--space-m-l);
+}
+.home-header .icon {
+	margin-bottom: var(--space-xs-s);
+}
+.home-header h1 {
+	margin-bottom: 0.25rlh;
+}
