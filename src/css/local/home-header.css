@@ -7,3 +7,7 @@
 .home-header h1 {
 	margin-bottom: 0.25rlh;
 }
+.home-header .desc {
+	color: var(--color-text-subtle);
+	font-style: italic;
+}

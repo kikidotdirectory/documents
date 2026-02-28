@@ -4,9 +4,16 @@
   Low-specificity, global styles that apply to the whole
   project: https://cube.fyi/css.html
 */
+:root,
+:root[data-theme='light'] {
+	--color-text: var(--color-ink);
+	--color-bg: var(--color-paper);
+	--color-text-subtle: var(--color-base-600);
+}
+
 body {
-	background: var(--color-light);
-	color: var(--color-dark);
+	background: var(--color-bg);
+	color: var(--color-text);
 	font-size: var(--size-step-0);
 	font-family: var(--font-base);
 	line-height: var(--leading-standard);
@@ -18,5 +25,5 @@ h1 {
 }
 
 a {
-	color: var(--color-dark);
+	color: var(--color-text);
 }
