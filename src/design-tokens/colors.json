@@ -7,8 +7,16 @@
 			"value": "#ffffff"
 		},
 		{
+			"name": "base-050",
+			"value": "#F2F0E5"
+		},
+		{
+			"name": "base-300",
+			"value": "#B3B3B3"
+		},
+		{
 			"name": "base-600",
-			"value": "#6F6E69"
+			"value": "#5C5757"
 		},
 		{
 			"name": "base-900",
