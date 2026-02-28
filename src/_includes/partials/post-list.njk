@@ -3,7 +3,6 @@
 	{% if not post.data.draft %}
 	<li>
 		<a href="/writings/{{post.data.title | slugify}}">
-			<time>{{ post.data.date | shortDate }}</time>
 			{{ post.data.title }}
 		</a>
 	</li>

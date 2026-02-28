@@ -1,12 +1,6 @@
 .post-list {
 	list-style: none;
 }
-
 .post-list a {
-	color: black;
-	text-decoration: none;
-}
-
-.post-list time {
-	color: gray;
+	color: var(--color-dark);
 }
